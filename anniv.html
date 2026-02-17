@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 19th Birthday - Eid Milad Said</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #4a1d6d;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .age {
+            text-align: center;
+            font-size: 3em;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .message-special {
+            background: #ffeaa7;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            color: #2d3436;
+            margin-bottom: 30px;
+            border: 3px dashed #fdcb6e;
+            direction: rtl;
+            font-weight: 600;
+        }
+        
+        .cat-game {
+            background: #dfe6e9;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .cat-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .cat {
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-align: center;
+            position: relative;
+            width: 180px;
+            padding: 15px 10px;
+            border-radius: 25px;
+        }
+        
+        .cat:hover {
+            transform: scale(1.1);
+        }
+        
+        .cat img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+        
+        .cat span {
+            display: block;
+            margin-top: 12px;
+            font-weight: 700;
+            color: #2d3436;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+        
+        .yasser-cat {
+            background: linear-gradient(145deg, #FFA500, #FF8C00);
+            border: 3px solid #FF8C00;
+        }
+        
+        .sarah-cat {
+            background: linear-gradient(145deg, #FFFFFF, #E0E0E0);
+            border: 3px solid #A9A9A9;
+        }
+        
+        .salma-cat {
+            background: linear-gradient(145deg, #D3D3D3, #808080);
+            border: 3px solid #696969;
+        }
+        
+        .birthday-message {
+            position: fixed;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            z-index: 1000;
+            pointer-events: none;
+            animation: floatMessage 1.5s ease-out forwards;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        
+        @keyframes floatMessage {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-150px) scale(1.5);
+            }
+        }
+        
+        .click-counter {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            color: #4a1d6d;
+            font-weight: 600;
+        }
+        
+        #clickCount {
+            font-size: 1.5em;
+            color: #ff6b6b;
+        }
+        
+        .wilson-section {
+            background: #f1f2f6;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #a4b0be;
+        }
+        
+        .wilson-title {
+            font-size: 1.5em;
+            color: #2f3542;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .wilson-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .wilson-box {
+            text-align: center;
+        }
+        
+        .coq-box {
+            text-align: center;
+        }
+        
+        .wilson {
+            font-size: 4em;
+            animation: shake 0.5s infinite;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .coq {
+            font-size: 4em;
+            animation: bounceCoq 1s ease-in-out infinite;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+        
+        @keyframes bounceCoq {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .wilson-text {
+            font-size: 1.5em;
+            color: #747d8c;
+            margin-top: 10px;
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        .game-button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 15px 0;
+            border: 2px solid transparent;
+        }
+        
+        .game-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            border-color: #fff;
+        }
+        
+        .game-button:active {
+            transform: translateY(0);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #636e72;
+            font-size: 0.9em;
+        }
+        
+        .cat-shake {
+            animation: catShake 0.5s ease-in-out;
+        }
+        
+        @keyframes catShake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(8deg) scale(1.1); }
+            50% { transform: rotate(-8deg) scale(1.1); }
+            75% { transform: rotate(4deg) scale(1.05); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎉</h1>
+        <div class="age">19 YEARS</div>
+        
+        <div class="message-special">
+            🎂 eid milad sa3id sadiqi dial oncf kol 3am whna ntlaqaw f tranat 🚂
+        </div>
+        
+        <!-- Interactive game with real cats -->
+        <div class="cat-game">
+            <h2 style="text-align: center; color: #4a1d6d; margin-bottom: 15px;">🐱 Play with the real cats! 🐱</h2>
+            <div style="text-align: center; margin-bottom: 10px; font-size: 0.9em; color: #636e72;">
+                Gha dertlk khatrk ama ana k7l
+            </div>
+            <div class="cat-container" id="catContainer">
+                <!-- Yasser - Orange cat -->
+                <div class="cat yasser-cat" onclick="catClicked('yasser', event)">
+                    <img src="https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Yasser the orange cat">
+                    <span>Yasser 🐱 (Orange)</span>
+                </div>
+                
+                <!-- Sarah - White cat (kitten) -->
+                <div class="cat sarah-cat" onclick="catClicked('sarah', event)">
+                    <img src="https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Sarah the white kitten">
+                    <span>Sarah 🤍 (White kitten)</span>
+                </div>
+                
+                <!-- Salma - Gray cat -->
+                <div class="cat salma-cat" onclick="catClicked('salma', event)">
+                    <img src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Salma the gray cat">
+                    <span>Salma 🩶 (Gray)</span>
+                </div>
+            </div>
+            
+            <div class="click-counter">
+                <span>Cat cuddles: <span id="clickCount">0</span> 🥰</span>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="game-button" onclick="resetCount()">🔄 Restart cuddles</button>
+            </div>
+        </div>
+        
+        <!-- Wilson and Coq Section -->
+        <div class="wilson-section">
+            <div class="wilson-title">🎵 Lo siento Wilson... chofi chofi lfririj! 🐓</div>
+            
+            <div class="wilson-container">
+                <div class="wilson-box">
+                    <div class="wilson" onclick="wilsonDance()">
+                        🏐
+                    </div>
+                    <div class="wilson-text">Wilson</div>
+                </div>
+                
+                <div class="coq-box">
+                    <div class="coq" onclick="coqDance()" id="coq">
+                        🐓
+                    </div>
+                    <div class="wilson-text">Lfririj</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 15px; font-size: 1.1em; color: #4a1d6d;">
+                <span id="danceMessage">Click on Wilson or Lfririj! 👆</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🎂 Specially for you - 19 years - ONCF Forever 🚂</p>
+            <p style="font-size: 0.8em; margin-top: 5px;">Gha dertlk khatrk ama ana k7l</p>
+        </div>
+    </div>
+    
+    <script>
+        let count = 0;
+        const clickCountElement = document.getElementById('clickCount');
+        const danceMessage = document.getElementById('danceMessage');
+        const coqElement = document.getElementById('coq');
+        
+        function catClicked(catName, event) {
+            count++;
+            clickCountElement.textContent = count;
+            
+            // Get the clicked cat element
+            const catElement = event.currentTarget;
+            const catImg = catElement.querySelector('img');
+            
+            // Make the cat shake and move
+            catElement.classList.add('cat-shake');
+            setTimeout(() => {
+                catElement.classList.remove('cat-shake');
+            }, 500);
+            
+            // Make the cat jump
+            catImg.style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                catImg.style.transform = 'translateY(0)';
+            }, 200);
+            
+            // Show "Happy Birthday" message (always the same for all cats)
+            showBirthdayMessage(event.clientX, event.clientY, catName);
+            
+            // Special messages for different counts
+            if (count === 5) {
+                alert("🥳 5 cuddles! The cats love it!");
+            } else if (count === 10) {
+                alert("🎉 10 cuddles! You're the best cat friend!");
+            } else if (count === 19) {
+                alert("🐱✨ 19 cuddles! Happy 19th Birthday! ✨🐱");
+            }
+            
+            // Cat sounds (visual representation)
+            const catSounds = {
+                'yasser': "MEOW! 😺",
+                'sarah': "Miaou! (kitten) 🐱",
+                'salma': "Purrr... 🩶"
+            };
+            
+            // Create floating message for each cat
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = catSounds[catName];
+            messageDiv.style.position = 'fixed';
+            messageDiv.style.left = (event.clientX - 40) + 'px';
+            messageDiv.style.top = (event.clientY - 50) + 'px';
+            
+            // Different colors for each cat
+            if (catName === 'yasser') {
+                messageDiv.style.backgroundColor = '#FFA500';
+                messageDiv.style.color = 'black';
+            } else if (catName === 'sarah') {
+                messageDiv.style.backgroundColor = '#FFFFFF';
+                messageDiv.style.color = 'black';
+                messageDiv.style.border = '2px solid black';
+            } else {
+                messageDiv.style.backgroundColor = '#808080';
+                messageDiv.style.color = 'white';
+            }
+            
+            messageDiv.style.padding = '5px 15px';
+            messageDiv.style.borderRadius = '20px';
+            messageDiv.style.fontSize = '1em';
+            messageDiv.style.fontWeight = 'bold';
+            messageDiv.style.zIndex = '1000';
+            messageDiv.style.animation = 'floatMessage 1s ease-out';
+            messageDiv.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 1000);
+        }
+        
+        function showBirthdayMessage(x, y, catName) {
+            const msg = document.createElement('div');
+            msg.className = 'birthday-message';
+            msg.textContent = 'HAPPY BIRTHDAY! 🎉🎂';
+            
+            // Colors based on cat
+            if (catName === 'yasser') {
+                msg.style.backgroundColor = '#FFA500';
+                msg.style.color = 'black';
+            } else if (catName === 'sarah') {
+                msg.style.backgroundColor = '#FFFFFF';
+                msg.style.color = 'black';
+                msg.style.border = '2px solid black';
+            } else {
+                msg.style.backgroundColor = '#808080';
+                msg.style.color = 'white';
+            }
+            
+            msg.style.left = (x - 100) + 'px';
+            msg.style.top = (y - 80) + 'px';
+            
+            document.body.appendChild(msg);
+            
+            setTimeout(() => {
+                msg.remove();
+            }, 1500);
+        }
+        
+        function resetCount() {
+            count = 0;
+            clickCountElement.textContent = count;
+            alert("🐱 The cats are ready for new cuddles!");
+            
+            // Make all cats meow in celebration
+            const cats = document.querySelectorAll('.cat');
+            cats.forEach((cat, index) => {
+                setTimeout(() => {
+                    cat.classList.add('cat-shake');
+                    setTimeout(() => {
+                        cat.classList.remove('cat-shake');
+                    }, 500);
+                }, index * 200);
+            });
+        }
+        
+        function wilsonDance() {
+            const wilson = document.querySelector('.wilson');
+            wilson.style.animation = 'none';
+            wilson.offsetHeight; // Force reflow
+            wilson.style.animation = 'shake 0.5s infinite';
+            
+            danceMessage.textContent = "Lo siento Wilson! You're a champion! 🏐";
+            danceMessage.style.color = '#ff6b6b';
+            
+            // Extra animation
+            setTimeout(() => {
+                wilson.style.transform = 'scale(1.5)';
+                setTimeout(() => {
+                    wilson.style.transform = 'scale(1)';
+                }, 200);
+            }, 100);
+        }
+        
+        function coqDance() {
+            const coq = document.getElementById('coq');
+            coq.style.animation = 'none';
+            coq.offsetHeight; // Force reflow
+            coq.style.animation = 'bounceCoq 0.5s ease-in-out infinite';
+            
+            danceMessage.textContent = "Cocorico! Lfririj is dancing for your 19th birthday! 🐓✨";
+            danceMessage.style.color = '#4a1d6d';
+            
+            // Make feathers appear
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const feather = document.createElement('div');
+                    feather.textContent = '🪶';
+                    feather.style.position = 'fixed';
+                    feather.style.left = Math.random() * window.innerWidth + 'px';
+                    feather.style.top = Math.random() * window.innerHeight + 'px';
+                    feather.style.fontSize = '25px';
+                    feather.style.animation = 'bounce 1s ease-out';
+                    feather.style.zIndex = '1000';
+                    document.body.appendChild(feather);
+                    
+                    setTimeout(() => {
+                        feather.remove();
+                    }, 1000);
+                }, i * 200);
+            }
+        }
+        
+        // Welcome animation
+        window.onload = function() {
+            alert("🎂 Happy 19th Birthday! 🎂\nEid milad sa3id sadiqi dial oncf!");
+            
+            // Animate cats on load
+            const cats = document.querySelectorAll('.cat');
+            cats.forEach((cat, index) => {
+                setTimeout(() => {
+                    cat.classList.add('cat-shake');
+                    setTimeout(() => {
+                        cat.classList.remove('cat-shake');
+                    }, 500);
+                }, index * 300);
+            });
+        };
+    </script>
+</body>
+</html>
